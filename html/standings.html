@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Standings | SL.com</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <script src="../scripts/dropdown.js"></script>
+    <script src="../scripts/standings.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navigation">
+            <ul>
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="watch.html">WATCH</a></li>
+                <li><a href="news.html">NEWS</a></li>
+                <li><a href="schedule.html">SCHEDULE</a></li>
+                <li><a href="standings.html">STANDINGS</a></li>
+                <li><a href="stats.html">STATS</a></li>
+                <li><a href="teams.html">TEAMS</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- PAGE HEADER -->
+        <div class="page-header">
+            <h1>Standings</h1>
+            <hr>
+        </div>
+        <!-- SELECTION BAR -->
+        <div class="selection-bar">
+            <div class="inline-block-25">
+                <div class="dropdown">
+                    <p>Year:</p>
+                    <button class="dropdown-button" id="year-dropdown-button" onclick="toggleDropdown('year-dropdown')">2024</button>
+                    <div class="dropdown-content" id="year-dropdown">
+                        <button onclick="setYear(2024)">2024</button>
+                        <button onclick="setYear(2023)">2023</button>
+                        <button onclick="setYear(2022)">2022</button>
+                        <button onclick="setYear(2021)">2021</button>
+                        <button onclick="setYear(2020)">2020</button>
+                        <button onclick="setYear(2019)">2019</button>
+                        <button onclick="setYear(2018)">2018</button>
+                    </div>
+                </div>
+            </div>
+            <div class="inline-block-25">
+                <div class="dropdown">
+                    <p>Group By:</p>
+                    <button class="dropdown-button" id="group-dropdown-button" onclick="toggleDropdown('group-dropdown')">League</button>
+                    <div class="dropdown-content" id="group-dropdown">
+                        <button onclick="setGroup('League')">League</button>
+                        <button onclick="setGroup('Conference')">Conference</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- CONTENT -->
+        <div class="content">
+            <div class="section-header">
+                <h2>League</h2>
+                <hr>
+            </div>
+            <table>
+                <tr class="table-header">
+                    <th width="20%">TEAM</th>
+                    <th width="5%">W</th>
+                    <th width="5%">L</th>
+                    <th width="6%">%</th>
+                    <th width="8%">H</th>
+                    <th width="8%">A</th>
+                    <th width="8%">Conf</th>
+                    <th width="8%">NConf</th>
+                    <th width="8%">Strk</th>
+                    <th width="6%">PS</th>
+                    <th width="6%">PA</th>
+                    <th>NP</th>
+                </tr>
+                <tr class="table-row">
+                    <td>Team 1</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0-0</td>
+                    <td>0-0</td>
+                    <td>0-0</td>
+                    <td>0-0</td>
+                    <td>-</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+            </table>
+        </div>
+    </main>
+    <footer>
+        <h2>(C) Mason Hart 2025</h2>
+    </footer>
+</body>
+</html>

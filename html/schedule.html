@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule | SL.com</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <script src="../scripts/dropdown.js"></script>
+    <script src="../scripts/schedule.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navigation">
+            <ul>
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="watch.html">WATCH</a></li>
+                <li><a href="news.html">NEWS</a></li>
+                <li><a href="schedule.html">SCHEDULE</a></li>
+                <li><a href="standings.html">STANDINGS</a></li>
+                <li><a href="stats.html">STATS</a></li>
+                <li><a href="teams.html">TEAMS</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- PAGE HEADER -->
+        <div class="page-header">
+            <h1>Schedule</h1>
+            <hr>
+        </div>
+        <!-- SELECTION BAR -->
+        <div class="selection-bar">
+            <div class="inline-block-25">
+                <div class="dropdown">
+                    <p>Year:</p>
+                    <button class="dropdown-button" id="year-dropdown-button" onclick="toggleDropdown('year-dropdown')">2024</button>
+                    <div class="dropdown-content" id="year-dropdown">
+                        <button onclick="setYear(2024)">2024</button>
+                        <button onclick="setYear(2023)">2023</button>
+                        <button onclick="setYear(2022)">2022</button>
+                        <button onclick="setYear(2021)">2021</button>
+                        <button onclick="setYear(2020)">2020</button>
+                        <button onclick="setYear(2019)">2019</button>
+                        <button onclick="setYear(2018)">2018</button>
+                    </div>
+                </div>
+            </div>
+            <div class="inline-block-25">
+                <div class="dropdown">
+                    <p>Week:</p>
+                    <button class="dropdown-button" id="week-dropdown-button" onclick="toggleDropdown('week-dropdown')">Week 1</button>
+                    <div class="dropdown-content" id="week-dropdown">
+                        <button onclick="setWeek(1)">Week 1</button>
+                        <button onclick="setWeek(2)">Week 2</button>
+                        <button onclick="setWeek(3)">Week 3</button>
+                        <button onclick="setWeek(4)">Week 4</button>
+                        <button onclick="setWeek(5)">Week 5</button>
+                        <button onclick="setWeek(6)">Week 6</button>
+                        <button onclick="setWeek(7)">Week 7</button>
+                        <button onclick="setWeek(8)">Week 8</button>
+                        <button onclick="setWeek(9)">Week 9</button>
+                        <button onclick="setWeek(10)">Week 10</button>
+                        <button onclick="setWeek(11)">Week 11</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- CONTENT -->
+        <div class="content">
+            <div class="section-header">
+                <h2>Friday, March 7</h2>
+                <hr>
+            </div>
+            <table>
+                <tr class="table-header">
+                    <th width="15%" style="text-align:center">TIME</th>
+                    <th width="5%" style="text-align:center">P</th>
+                    <th width="20%" style="text-align:right">HOME</th>
+                    <th width="7%" style="text-align:center"></th>
+                    <th width="5%" style="text-align:center"></th>
+                    <th width="7%" style="text-align:center"></th>
+                    <th width="20%" style="text-align:left">AWAY</th>
+                    <th width="5%" style="text-align:center">P</th>
+                    <th style="text-align:center">WATCH</th>
+                </tr>
+                <tr class="table-row">
+                    <td style="text-align:center">1:00 CST</td>
+                    <td style="text-align:center">0</td>
+                    <td style="text-align:right">(0-0) Team 1</td>
+                    <td style="text-align:center">Logo</td>
+                    <td style="text-align:center">VS</td>
+                    <td style="text-align:center">Logo</td>
+                    <td style="text-align:left">Team 2 (0-0)</td>
+                    <td style="text-align:center">0</td>
+                    <td style="text-align:center"><a href="./watch.html">Link</a></td>
+                </tr>
+                <tr class="table-row">
+                    <td style="text-align:center">2:00 CST</td>
+                    <td style="text-align:center">0</td>
+                    <td style="text-align:right">(0-0) Team 3</td>
+                    <td style="text-align:center">Logo</td>
+                    <td style="text-align:center">VS</td>
+                    <td style="text-align:center">Logo</td>
+                    <td style="text-align:left">Team 4 (0-0)</td>
+                    <td style="text-align:center">0</td>
+                    <td style="text-align:center"><a href="./watch.html">Link</a></td>
+                </tr>
+                <tr class="table-row">
+                    <td style="text-align:center">3:00 CST</td>
+                    <td style="text-align:center">0</td>
+                    <td style="text-align:right">(0-0) Team 5</td>
+                    <td style="text-align:center">Logo</td>
+                    <td style="text-align:center">VS</td>
+                    <td style="text-align:center">Logo</td>
+                    <td style="text-align:left">Team 6 (0-0)</td>
+                    <td style="text-align:center">0</td>
+                    <td style="text-align:center"><a href="./watch.html">Link</a></td>
+                </tr>
+                <tr class="table-row">
+                    <td style="text-align:center">4:00 CST</td>
+                    <td style="text-align:center">0</td>
+                    <td style="text-align:right">(0-0) Team 7</td>
+                    <td style="text-align:center">Logo</td>
+                    <td style="text-align:center">VS</td>
+                    <td style="text-align:center">Logo</td>
+                    <td style="text-align:left">Team 8 (0-0)</td>
+                    <td style="text-align:center">0</td>
+                    <td style="text-align:center"><a href="./watch.html">Link</a></td>
+                </tr>
+            </table>
+            <div class="section-header">
+                <h2>Saturday, March 8</h2>
+                <hr>
+            </div>
+            <table>
+                <tr class="table-header">
+                    <th width="15%" style="text-align:center">TIME</th>
+                    <th width="5%" style="text-align:center">P</th>
+                    <th width="20%" style="text-align:right">HOME</th>
+                    <th width="7%" style="text-align:center"></th>
+                    <th width="5%" style="text-align:center"></th>
+                    <th width="7%" style="text-align:center"></th>
+                    <th width="20%" style="text-align:left">AWAY</th>
+                    <th width="5%" style="text-align:center">P</th>
+                    <th style="text-align:center">WATCH</th>
+                </tr>
+                <tr class="table-row">
+                    <td style="text-align:center">1:00 CST</td>
+                    <td style="text-align:center">0</td>
+                    <td style="text-align:right">(0-0) Team 9</td>
+                    <td style="text-align:center">Logo</td>
+                    <td style="text-align:center">VS</td>
+                    <td style="text-align:center">Logo</td>
+                    <td style="text-align:left">Team 10 (0-0)</td>
+                    <td style="text-align:center">0</td>
+                    <td style="text-align:center"><a href="./watch.html">Link</a></td>
+                </tr>
+                <tr class="table-row">
+                    <td style="text-align:center">2:00 CST</td>
+                    <td style="text-align:center">0</td>
+                    <td style="text-align:right">(0-0) Team 11</td>
+                    <td style="text-align:center">Logo</td>
+                    <td style="text-align:center">VS</td>
+                    <td style="text-align:center">Logo</td>
+                    <td style="text-align:left">Team 12 (0-0)</td>
+                    <td style="text-align:center">0</td>
+                    <td style="text-align:center"><a href="./watch.html">Link</a></td>
+                </tr>
+                <tr class="table-row">
+                    <td style="text-align:center">3:00 CST</td>
+                    <td style="text-align:center">0</td>
+                    <td style="text-align:right">(0-0) Team 13</td>
+                    <td style="text-align:center">Logo</td>
+                    <td style="text-align:center">VS</td>
+                    <td style="text-align:center">Logo</td>
+                    <td style="text-align:left">Team 14 (0-0)</td>
+                    <td style="text-align:center">0</td>
+                    <td style="text-align:center"><a href="./watch.html">Link</a></td>
+                </tr>
+                <tr class="table-row">
+                    <td style="text-align:center">4:00 CST</td>
+                    <td style="text-align:center">0</td>
+                    <td style="text-align:right">(0-0) Team 15</td>
+                    <td style="text-align:center">Logo</td>
+                    <td style="text-align:center">VS</td>
+                    <td style="text-align:center">Logo</td>
+                    <td style="text-align:left">Team 16 (0-0)</td>
+                    <td style="text-align:center">0</td>
+                    <td style="text-align:center"><a href="./watch.html">Link</a></td>
+                </tr>
+            </table>
+        </div>
+    </main>
+    <footer>
+        <h2>(C) Mason Hart 2025</h2>
+    </footer>
+</body>
+</html>
