@@ -1,0 +1,180 @@
+{
+    "weeks":[
+        {
+            "days":[
+                {"date":"Friday, March 7","data":[
+                    {"time":"1:00 CST","home":"Team 1","away":"Team 2","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"2:00 CST","home":"Team 3","away":"Team 4","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"3:00 CST","home":"Team 5","away":"Team 6","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"4:00 CST","home":"Team 7","away":"Team 8","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0}
+                ]},
+                {"date":"Saturday, March 8","data":[
+                    {"time":"1:00 CST","home":"Team 9","away":"Team 10","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"2:00 CST","home":"Team 11","away":"Team 12","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"3:00 CST","home":"Team 13","away":"Team 14","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"4:00 CST","home":"Team 15","away":"Team 16","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0}
+                ]}
+            ]
+        },
+        {
+            "days":[
+                {"date":"Friday, March 7","data":[
+                    {"time":"1:00 CST","home":"Team 1","away":"Team 2","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"2:00 CST","home":"Team 3","away":"Team 4","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"3:00 CST","home":"Team 5","away":"Team 6","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"4:00 CST","home":"Team 7","away":"Team 8","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0}
+                ]},
+                {"date":"Saturday, March 8","data":[
+                    {"time":"1:00 CST","home":"Team 9","away":"Team 10","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"2:00 CST","home":"Team 11","away":"Team 12","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"3:00 CST","home":"Team 13","away":"Team 14","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"4:00 CST","home":"Team 15","away":"Team 16","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0}
+                ]}
+            ]
+        },
+        {
+            "days":[
+                {"date":"Friday, March 7","data":[
+                    {"time":"1:00 CST","home":"Team 1","away":"Team 2","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"2:00 CST","home":"Team 3","away":"Team 4","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"3:00 CST","home":"Team 5","away":"Team 6","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"4:00 CST","home":"Team 7","away":"Team 8","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0}
+                ]},
+                {"date":"Saturday, March 8","data":[
+                    {"time":"1:00 CST","home":"Team 9","away":"Team 10","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"2:00 CST","home":"Team 11","away":"Team 12","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"3:00 CST","home":"Team 13","away":"Team 14","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"4:00 CST","home":"Team 15","away":"Team 16","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0}
+                ]}
+            ]
+        },
+        {
+            "days":[
+                {"date":"Friday, March 7","data":[
+                    {"time":"1:00 CST","home":"Team 1","away":"Team 2","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"2:00 CST","home":"Team 3","away":"Team 4","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"3:00 CST","home":"Team 5","away":"Team 6","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"4:00 CST","home":"Team 7","away":"Team 8","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0}
+                ]},
+                {"date":"Saturday, March 8","data":[
+                    {"time":"1:00 CST","home":"Team 9","away":"Team 10","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"2:00 CST","home":"Team 11","away":"Team 12","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"3:00 CST","home":"Team 13","away":"Team 14","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"4:00 CST","home":"Team 15","away":"Team 16","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0}
+                ]}
+            ]
+        },
+        {
+            "days":[
+                {"date":"Friday, March 7","data":[
+                    {"time":"1:00 CST","home":"Team 1","away":"Team 2","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"2:00 CST","home":"Team 3","away":"Team 4","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"3:00 CST","home":"Team 5","away":"Team 6","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"4:00 CST","home":"Team 7","away":"Team 8","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0}
+                ]},
+                {"date":"Saturday, March 8","data":[
+                    {"time":"1:00 CST","home":"Team 9","away":"Team 10","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"2:00 CST","home":"Team 11","away":"Team 12","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"3:00 CST","home":"Team 13","away":"Team 14","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"4:00 CST","home":"Team 15","away":"Team 16","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0}
+                ]}
+            ]
+        },
+        {
+            "days":[
+                {"date":"Friday, March 7","data":[
+                    {"time":"1:00 CST","home":"Team 1","away":"Team 2","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"2:00 CST","home":"Team 3","away":"Team 4","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"3:00 CST","home":"Team 5","away":"Team 6","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"4:00 CST","home":"Team 7","away":"Team 8","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0}
+                ]},
+                {"date":"Saturday, March 8","data":[
+                    {"time":"1:00 CST","home":"Team 9","away":"Team 10","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"2:00 CST","home":"Team 11","away":"Team 12","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"3:00 CST","home":"Team 13","away":"Team 14","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"4:00 CST","home":"Team 15","away":"Team 16","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0}
+                ]}
+            ]
+        },
+        {
+            "days":[
+                {"date":"Friday, March 7","data":[
+                    {"time":"1:00 CST","home":"Team 1","away":"Team 2","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"2:00 CST","home":"Team 3","away":"Team 4","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"3:00 CST","home":"Team 5","away":"Team 6","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"4:00 CST","home":"Team 7","away":"Team 8","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0}
+                ]},
+                {"date":"Saturday, March 8","data":[
+                    {"time":"1:00 CST","home":"Team 9","away":"Team 10","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"2:00 CST","home":"Team 11","away":"Team 12","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"3:00 CST","home":"Team 13","away":"Team 14","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"4:00 CST","home":"Team 15","away":"Team 16","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0}
+                ]}
+            ]
+        },
+        {
+            "days":[
+                {"date":"Friday, March 7","data":[
+                    {"time":"1:00 CST","home":"Team 1","away":"Team 2","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"2:00 CST","home":"Team 3","away":"Team 4","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"3:00 CST","home":"Team 5","away":"Team 6","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"4:00 CST","home":"Team 7","away":"Team 8","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0}
+                ]},
+                {"date":"Saturday, March 8","data":[
+                    {"time":"1:00 CST","home":"Team 9","away":"Team 10","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"2:00 CST","home":"Team 11","away":"Team 12","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"3:00 CST","home":"Team 13","away":"Team 14","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"4:00 CST","home":"Team 15","away":"Team 16","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0}
+                ]}
+            ]
+        },
+        {
+            "days":[
+                {"date":"Friday, March 7","data":[
+                    {"time":"1:00 CST","home":"Team 1","away":"Team 2","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"2:00 CST","home":"Team 3","away":"Team 4","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"3:00 CST","home":"Team 5","away":"Team 6","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"4:00 CST","home":"Team 7","away":"Team 8","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0}
+                ]},
+                {"date":"Saturday, March 8","data":[
+                    {"time":"1:00 CST","home":"Team 9","away":"Team 10","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"2:00 CST","home":"Team 11","away":"Team 12","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"3:00 CST","home":"Team 13","away":"Team 14","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"4:00 CST","home":"Team 15","away":"Team 16","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0}
+                ]}
+            ]
+        },
+        {
+            "days":[
+                {"date":"Friday, March 7","data":[
+                    {"time":"1:00 CST","home":"Team 1","away":"Team 2","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"2:00 CST","home":"Team 3","away":"Team 4","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"3:00 CST","home":"Team 5","away":"Team 6","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"4:00 CST","home":"Team 7","away":"Team 8","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0}
+                ]},
+                {"date":"Saturday, March 8","data":[
+                    {"time":"1:00 CST","home":"Team 9","away":"Team 10","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"2:00 CST","home":"Team 11","away":"Team 12","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"3:00 CST","home":"Team 13","away":"Team 14","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"4:00 CST","home":"Team 15","away":"Team 16","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0}
+                ]}
+            ]
+        },
+        {
+            "days":[
+                {"date":"Friday, March 7","data":[
+                    {"time":"1:00 CST","home":"Team 1","away":"Team 2","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"2:00 CST","home":"Team 3","away":"Team 4","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"3:00 CST","home":"Team 5","away":"Team 6","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"4:00 CST","home":"Team 7","away":"Team 8","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0}
+                ]},
+                {"date":"Saturday, March 8","data":[
+                    {"time":"1:00 CST","home":"Team 9","away":"Team 10","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"2:00 CST","home":"Team 11","away":"Team 12","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"3:00 CST","home":"Team 13","away":"Team 14","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0},
+                    {"time":"4:00 CST","home":"Team 15","away":"Team 16","hrec":"0-0","arec":"0-0","ptsh":0,"ptsa":0}
+                ]}
+            ]
+        }
+    ]
+}
