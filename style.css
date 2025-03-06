@@ -1,0 +1,226 @@
+/* AUTHOR  MASON HART */
+
+
+
+/* VARIABLES */
+:root{
+    --font-family: sans-serif; 
+    --font: Helvetica;
+}
+
+
+/* BASE */
+body{
+    margin:0;
+    padding:0;
+    font-family: var(--font-family);
+    /* font: var(--font); */
+    background-color:#efefef;
+    color:#333;
+}
+main{
+    background-color:#fefefe;
+    margin:70px 5% 0px 5%;
+    min-height:700px;
+}
+footer{
+    margin:0px;
+    background-color:#333;
+    min-height:80px;
+    width:100%;
+    color: #eef;
+}
+footer h2{
+    float:center;
+    padding:10px;
+    margin:inherit;
+}
+
+
+/* HEADERS */
+.section-header{
+    text-align:center;
+    padding:5px;
+    font-size:1.3em;
+}
+.section-header h2{
+    margin:20px 0px 5px 0px;
+    color:#333;
+}
+hr{
+    margin:0px;
+    padding:2px;
+    background-color:#333;
+}
+.page-header{
+    text-align:center;
+    padding:7px;
+    font-size:1.2em;
+}
+.page-header h1{
+    margin:17px 0px 7px 0px;
+}
+
+
+/* SECTIONS */
+.inline-block-50{
+    display:inline-block;
+    width:45%;
+    padding:0;
+    margin:0px 2%;
+}
+.inline-block-25{
+    display:inline-block;
+    width:22%;
+    padding:0;
+    margin:0px 2%;
+}
+
+
+/* NAVIGATION BAR */
+.navigation ul {
+    min-height:70px;
+    font-family: var(--font-family);
+    /* font: var(--font); */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+}
+.navigation li{
+    display:inline;
+    float:left;
+
+}
+.navigation li a{
+    display:block;
+    padding:20px 18px;
+    font-size:24px;
+    text-align:center;
+    text-decoration:none;
+    color: #eef;
+}
+
+
+/* SELECTION GROUP */
+.dropdown{
+    position:relative;
+}
+.dropdown p{
+    margin:0px;
+    padding:5px;
+    font-size:20px;
+}
+.dropdown-button{
+    text-align:left;
+    border: 2px solid #222;
+    width:100%;
+    height:30px;
+    font-size:20px;
+    background-color:#e3e3e3;
+}
+.dropdown-content{
+    display:none;
+    position:absolute;
+    background-color:#e3e3e3;
+    width:100%;
+    margin:0px;
+    padding:0px;
+}
+.dropdown-content button{
+    border:none;
+    text-align:left;
+    width:100%;
+    height:28px;
+    font-size:20px;
+    background-color:#e3e3e3;
+}
+.dropdown button:focus, .dropdown button:hover{
+    background-color:#ccc;
+}
+.show{
+    display:block;
+}
+
+
+/* TABLES */
+table{
+    width:100%;
+    padding: 0px;
+    font-size:20px;
+    border-collapse:collapse;
+}
+.table-header{
+    text-align:left;
+    width:100%;
+}
+.table-row{
+    text-align:left;
+    width:100%;
+    margin:0;
+}
+.table-header th{
+    margin:5px;
+    padding:6px;
+}
+.table-row td{
+    margin:4px;
+    padding:4px;
+}
+tr:nth-child(odd) {
+    background-color: #e3e3e3;
+}
+tr:hover{
+    background-color:#ccc;
+}
+     /* Standings page qualifying rows */
+table #s-row{
+    border-bottom: 2px solid #222;
+}
+table #d-row{
+    border-bottom: 2px dashed #222;
+}
+
+
+/* TEAMS PAGE */
+.team-profile{
+    display:block;
+    margin: 5px 0px;
+    padding: 10px 14px;
+}
+#team-city{
+    display:inline;
+    margin: 0;
+    padding:0;
+    font-size: 20px;
+    width:50%;
+}
+#team-stadium{
+    display:inline;
+    padding:0;
+    margin: 0;
+    font-size: 20px;
+    width:50%;
+    float: right;
+    text-align:right;
+}
+#team-name{
+    padding:0;
+    margin: 0;
+    font-size: 32px;
+    width: 50%;
+    display:inline;
+}
+#team-stats{
+    padding:0;
+    margin: 0;
+    font-size: 32px;
+    display:inline;
+    float: right;
+    text-align:right;
+    width:50%;
+}
