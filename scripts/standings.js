@@ -2,7 +2,7 @@ var selectedYear = 2024;
 var selectedGroup = "League";
 
 setPageTitle(); // TODO 
-getData("../data/standings/"+selectedYear+"standings.json")
+getData("../assets/data/standings/"+selectedYear+"standings.json")
 
 
 // Set the year, attempt to rebuild the page

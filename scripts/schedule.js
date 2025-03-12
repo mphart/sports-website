@@ -2,7 +2,7 @@ var selectedYear = 2024;
 var selectedWeek = 1;
 
 // setPageTitle(); // TODO 
-getData("../data/schedules/"+selectedYear+"schedule.json")
+getData("../assets/data/schedules/"+selectedYear+"schedule.json")
 
 
 // Set the year, attempt to rebuild the page
