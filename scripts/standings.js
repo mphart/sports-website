@@ -1,23 +1,25 @@
 var selectedYear = 2024;
 var selectedGroup = "League";
+var jsonDataLocation = `../assets/data/standings/${selectedYear}standings.json`;
 
 setPageTitle(); // TODO 
-getData("../assets/data/standings/"+selectedYear+"standings.json")
+getData(jsonDataLocation)
 
 
 // Set the year, attempt to rebuild the page
 function setYear(year){
     if(year != selectedYear){
         selectedYear = year;
+        jsonDataLocation = `../assets/data/standings/${selectedYear}standings.json`;
         document.getElementById('year-dropdown-button').innerHTML = selectedYear;
-        getData("../data/standings/"+selectedYear+"standings.json");
+        getData(jsonDataLocation);
     }
 }
 // Set the group, attempt to rebuild the page
 function setGroup(group){
     selectedGroup = group;
     document.getElementById('group-dropdown-button').innerHTML = selectedGroup;
-    getData("../data/standings/"+selectedYear+"standings.json");
+    getData(jsonDataLocation);
 }
 
 // Get the data at the given location, then rebuild the page content
