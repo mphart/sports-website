@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
 
-const env = require('../process.env');
+require('dotenv').config();
 
-const port = env.SERVER_PORT;
+const port = process.env.SERVER_PORT;
 
 const cors = require('cors');
 app.use(cors);
@@ -11,11 +11,11 @@ app.use(cors);
 /** Custom Logging Middleware */
 const consoleLogger = require('./middleware/consoleLogger');
 const fileLogger = require('./middleware/fileLogger');
-if(env.SERVER_CONSOLE_LOG) {
+if(process.env.SERVER_CONSOLE_LOG == "True") {
   console.log('Using console logger');
   app.use(consoleLogger);
 }
-if(env.SERVER_FILE_LOG) {
+if(process.env.SERVER_FILE_LOG == "True") {
   console.log('Using file logger');
   app.use(fileLogger);
 }

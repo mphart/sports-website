@@ -1,10 +1,10 @@
 const mysql = require("mysql2/promise");
-const env = require("../process.env");
+require("dotenv").config();
 const db = mysql.createPool({
-  host: env.DB_HOST,
-  user: env.DB_USERNAME,
-  password: env.DB_PASSWORD,
-  database: env.DB_DATABASE
+  host: process.env.DB_HOST,
+  user: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE
 });
-console.log(`Accessing mysql database ${env.DB_DATABASE} with username ${env.DB_USERNAME}`);
+console.log(`Accessing mysql database ${process.env.DB_DATABASE} with username ${process.env.DB_USERNAME}`);
 module.exports = db;
