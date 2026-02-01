@@ -10,7 +10,7 @@ export default function Navbar(){
                 <NavbarLink linkto="/">Home</NavbarLink>
                 <NavbarLink linkto="/watch">Watch</NavbarLink>
                 <NavbarLink linkto="/news">News</NavbarLink>
-                <NavbarLink linkto="/standings">Standings</NavbarLink>
+                <NavbarLink linkto={"/standings/"+new Date().getFullYear()+"/conference"}>Standings</NavbarLink>
                 <NavbarLink linkto="/schedule">Schedule</NavbarLink>
                 <NavbarLink linkto="/teams">Teams</NavbarLink>
             </div>
