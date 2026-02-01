@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 
-import {PageHeader} from '../../components/section'
+import {PageHeader, MainPageSection} from '../../components/section'
 
 // temporary data until server works
 import tempStandings from '../../assets/temp-standings'
@@ -18,7 +18,7 @@ export default function StandingsPage({year, group}){
     async function getStandings(){
         try{
             const response = await fetch(apiPath)
-            const result = response.json();
+            const result = await response.json();
             console.log(result)
             setStandings(result)
         } catch(e){
@@ -27,30 +27,53 @@ export default function StandingsPage({year, group}){
     }
 
     return(
-        <div className="bg-gray-300">
-            <div className="ml-20 mr-20 pb-10 bg-gray-100">
-                <PageHeader>Standings</PageHeader>
-                {standings.conferences.map((conference) => {
-                    return(
+        <MainPageSection>
+            <PageHeader>Standings</PageHeader>
+            {standings.group.map((g)=>{
+                return(
                     <>
-                        <h1 key={conference.name} className="text-xl font-bold">{conference.name}</h1>
-                        <div key={conference.name.toUpperCase()} className="grid grid-rows-[2fr repeat(3, 1fr) repeat(9, 1.5fr) 1fr 1fr]">
-                            {conference.teams.forEach((team)=>{
-                                const teamStandings = standings.teams.filter((t) => t.name == team)[0]
-                                return Object.keys(teamStandings).forEach((k) => {
-                                    console.log(teamStandings.name.concat(k).replaceAll(" ",""))
-                                    return (
-                                    <div key={teamStandings.name.concat(k).replaceAll(" ","")}>
-                                    {teamStandings[k]}
-                                    </div>
-                                )})
-                            })}
-                        </div>
+                    <h1 key={g.name} className="text-2xl">{g.name}</h1>
+                    {g.subGroups.map((subgroup)=>{
+                        return(
+                            <>
+                            <h1 key={subgroup.name} className="text-xl">{subgroup.name}</h1>
+                            <div className="grid grid-cols-[6fr_repeat(6,2fr)_repeat(6,3fr)_repeat(2,2fr)]">
+                                <div className="border-b-1 border-t-1 font-bold pt-2 pb-2">Team Name</div>
+                                <div className="border-b-1 border-t-1 font-bold pt-2 pb-2">W</div>
+                                <div className="border-b-1 border-t-1 font-bold pt-2 pb-2">L</div>
+                                <div className="border-b-1 border-t-1 font-bold pt-2 pb-2">T</div>
+                                <div className="border-b-1 border-t-1 font-bold pt-2 pb-2">PCT</div>
+                                <div className="border-b-1 border-t-1 font-bold pt-2 pb-2">PS</div>
+                                <div className="border-b-1 border-t-1 font-bold pt-2 pb-2">PA</div>
+                                <div className="border-b-1 border-t-1 font-bold pt-2 pb-2">NET</div>
+                                <div className="border-b-1 border-t-1 font-bold pt-2 pb-2">Home</div>
+                                <div className="border-b-1 border-t-1 font-bold pt-2 pb-2">Away</div>
+                                <div className="border-b-1 border-t-1 font-bold pt-2 pb-2">Div</div>
+                                <div className="border-b-1 border-t-1 font-bold pt-2 pb-2">Conf</div>
+                                <div className="border-b-1 border-t-1 font-bold pt-2 pb-2">Nonconf</div>
+                                <div className="border-b-1 border-t-1 font-bold pt-2 pb-2">Strk</div>
+                                <div className="border-b-1 border-t-1 font-bold pt-2 pb-2">Last5</div>
+                            </div>
+                                {subgroup.teams.map((team) =>{
+                                    return(
+                                        <div className="hover:bg-gray-200 grid grid-cols-[6fr_repeat(6,2fr)_repeat(6,3fr)_repeat(2,2fr)]">
+                                        
+                                        {Object.keys(team).map((v) =>{
+                                        return(
+                                                <div key={team.name.concat(v)} className="border-b-1 pt-1 pb-1">{team[v]}</div>
+                                        )})}
+
+                                        </div>
+                                    )}
+                                    )
+                                }
+                            <br />
+                            </>
+                        )
+                    })}
                     </>
-                    )
-                    }   
-                )}
-            </div>
-        </div>
+                )
+            })}
+        </MainPageSection>
     )
 }

@@ -11,7 +11,7 @@ export default function Navbar(){
                 <NavbarLink linkto="/watch">Watch</NavbarLink>
                 <NavbarLink linkto="/news">News</NavbarLink>
                 <NavbarLink linkto={"/standings/"+new Date().getFullYear()+"/conference"}>Standings</NavbarLink>
-                <NavbarLink linkto="/schedule">Schedule</NavbarLink>
+                <NavbarDropdown linkto="/schedule">Schedule</NavbarDropdown>
                 <NavbarLink linkto="/teams">Teams</NavbarLink>
             </div>
             <div>
@@ -33,10 +33,13 @@ function NavbarLink({linkto, children}){
 }
 
 function NavbarDropdown({linkto, children}){
-    const style = 'mr-6 ml-6 text-blue-500 hover:text-blue-400 active:text-blue-300 hover:border-b-3 '
+    const style = 'mr-6 ml-6 text-blue-500 hover:text-blue-400 active:text-blue-300 hover:border-b-3 hover:block relative'
+    const dropdownStyle = 'hidden absolute min-w-md bg-red-300 block'
     return(
         <>
-        <Link to={linkto} className={style}>{children}</Link>
+        <Link to={linkto} className={style}>{children}
+            <div className={dropdownStyle}>Dropdown test</div>
+        </Link>
         </>
     )
 }
