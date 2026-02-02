@@ -8,6 +8,8 @@ const port = process.env.SERVER_PORT;
 const cors = require('cors');
 app.use(cors);
 
+const db = require('./db.js');
+
 /** Custom Logging Middleware */
 const consoleLogger = require('./middleware/consoleLogger');
 const fileLogger = require('./middleware/fileLogger');
