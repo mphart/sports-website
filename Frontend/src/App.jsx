@@ -9,6 +9,7 @@ import NewsPage from './pages/news'
 
 import Header from './components/header'
 import Footer from './components/footer'
+import { MainPageSection } from './components/section'
 
 function App() {
   const startYear = 2000
@@ -24,21 +25,23 @@ function App() {
   return (
     <Router>
     <Header />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
+      <MainPageSection>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
 
-        <Route path="/standings">
-          <Route index element={<StandingsPage year={currYear} group="conference" />} />
-          {standingsPaths.map((standings) => standings)}
-        </Route>
+          <Route path="/standings">
+            <Route index element={<StandingsPage year={currYear} group="conference" />} />
+            {standingsPaths.map((standings) => standings)}
+          </Route>
 
-        <Route path="/schedule" element={<SchedulePage />} />
-        <Route path="/teams" element={<TeamsPage />} />
-        <Route path="/watch" element={<WatchPage />} />
-        <Route path="/news" element={<NewsPage />} />
+          <Route path="/schedule" element={<SchedulePage />} />
+          <Route path="/teams" element={<TeamsPage />} />
+          <Route path="/watch" element={<WatchPage />} />
+          <Route path="/news" element={<NewsPage />} />
 
-        <Route path="*" element={<p>404: Not Found</p>} />
-      </Routes>
+          <Route path="*" element={<p>404: Not Found</p>} />
+        </Routes>
+      </MainPageSection>
     <Footer />
     </Router>
   )

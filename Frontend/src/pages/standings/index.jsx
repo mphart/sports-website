@@ -27,7 +27,7 @@ export default function StandingsPage({year, group}){
     }
 
     return(
-        <MainPageSection>
+        <>
             <PageHeader>Standings</PageHeader>
             {standings.group.map((g)=>{
                 return(
@@ -74,6 +74,6 @@ export default function StandingsPage({year, group}){
                     </>
                 )
             })}
-        </MainPageSection>
+        </>
     )
 }

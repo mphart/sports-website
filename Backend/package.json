@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "server": "node --watch src/server.js",
-    "test": "node --watch src/test.js"
+    "setup": "node src/setup.js"
   },
   "keywords": [],
   "author": "",

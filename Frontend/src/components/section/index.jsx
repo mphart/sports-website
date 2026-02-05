@@ -7,7 +7,7 @@ export function PageHeader({children}){
 export function MainPageSection({children}){
     return(
         <div className="bg-gray-200 min-w-[500px]">
-            <div className="ml-20 mr-20 pl-5 pr-5 pb-10 bg-gray-100 min-h-[300px]">
+            <div className="ml-30 mr-30 pl-5 pr-5 pb-10 bg-gray-100 min-h-[300px]">
                 {children}
             </div>
         </div>

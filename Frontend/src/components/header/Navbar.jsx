@@ -5,13 +5,13 @@ export default function Navbar(){
 
     return(<>
 
-        <div className="bg-gray-900 flex place-content-between pt-4 pb-4 pl-20 pr-20">
+        <div className="bg-gray-900 flex place-content-between pt-4 pb-4 pl-30 pr-30">
             <div>
                 <NavbarLink linkto="/">Home</NavbarLink>
                 <NavbarLink linkto="/watch">Watch</NavbarLink>
                 <NavbarLink linkto="/news">News</NavbarLink>
                 <NavbarLink linkto={"/standings/"+new Date().getFullYear()+"/conference"}>Standings</NavbarLink>
-                <NavbarDropdown linkto="/schedule">Schedule</NavbarDropdown>
+                <NavbarLink linkto="/schedule">Schedule</NavbarLink>
                 <NavbarLink linkto="/teams">Teams</NavbarLink>
             </div>
             <div>
