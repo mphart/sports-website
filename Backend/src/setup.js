@@ -48,6 +48,8 @@ function createTables(){
         home_id int,
         away_id int,
         match_status varchar(10) default 'PENDING',
+        home_points int,
+        away_points int,
         next_match bigint,
         match_time datetime not null default current_timestamp,
         

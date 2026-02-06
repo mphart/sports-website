@@ -1,14 +1,16 @@
-const express = require('express');
-const app = express();
-
 require('dotenv').config();
 
+const express = require('express');
+const app = express();
 const port = process.env.SERVER_PORT;
 
+// TODO figure out cors
+console.log(`CORS allowed origins is set to ${process.env.CLIENT_URL}`)
 const cors = require('cors');
-app.use(cors);
-
-const db = require('./db.js');
+app.use(cors({
+  origin: process.env.CLIENT_URL,
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 /** Custom Logging Middleware */
 const consoleLogger = require('./middleware/consoleLogger');

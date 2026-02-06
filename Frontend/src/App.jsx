@@ -17,9 +17,9 @@ function App() {
 
   const standingsPaths = []
   for(let i = startYear; i <= currYear+1; i++){
-    standingsPaths.push(<Route path={i+"/division"} element={<StandingsPage year={i} group="division" />} />)
-    standingsPaths.push(<Route path={i+"/conference"} element={<StandingsPage year={i} group="conference" />} />)
-    standingsPaths.push(<Route path={i+"/league"} element={<StandingsPage year={i} group="league" />} />)
+    standingsPaths.push(<Route path={i+"/division"} element={<StandingsPage season={i} group="division" />} />)
+    standingsPaths.push(<Route path={i+"/conference"} element={<StandingsPage season={i} group="conference" />} />)
+    standingsPaths.push(<Route path={i+"/league"} element={<StandingsPage season={i} group="league" />} />)
   }
 
   return (
@@ -30,7 +30,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
 
           <Route path="/standings">
-            <Route index element={<StandingsPage year={currYear} group="conference" />} />
+            <Route index element={<StandingsPage season={currYear} group="conference" />} />
             {standingsPaths.map((standings) => standings)}
           </Route>
 
