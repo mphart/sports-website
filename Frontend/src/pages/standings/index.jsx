@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 
-import { PageHeader } from '../../components/section'
+import { PageHeader, MainPageSection } from '../../components/section'
 
 // temporary data until server works
 // import tempStandings from '../../assets/temp-standings'
@@ -13,10 +13,10 @@ export default function StandingsPage({ season, group }) {
     const currYear = new Date().getFullYear()
 
     const standingsLinks = []
-    for(let i = currYear; i >= startYear; i--){
+    for (let i = currYear; i >= startYear; i--) {
         standingsLinks.push(
             <div className="hover:bg-gray-200 content-center text-center">
-                <Link onClick={()=>{season=i}} className="w-[100%] pt-1 pb-1" to={`/standings/${i}/${group}`}>{i}</Link>
+                <Link onClick={() => { season = i }} className="w-[100%] pt-1 pb-1" to={`/standings/${i}/${group}`}>{i}</Link>
             </div>
         )
     }
@@ -41,32 +41,32 @@ export default function StandingsPage({ season, group }) {
     }
 
     return (
-        <>
+        <MainPageSection>
             <PageHeader>Standings</PageHeader>
             <div className="flex gap-2">
                 <div>
                     <p>Season</p>
                     <DropdownMenu startValue={season}>
-                        {standingsLinks.map((link)=>link)}
+                        {standingsLinks.map((link) => link)}
                     </DropdownMenu>
                 </div>
                 <div>
                     <p>Group By</p>
                     <DropdownMenu startValue={group}>
                         <div className="hover:bg-gray-200 content-center text-center">
-                            <Link 
-                            onClick={()=>{group="division"}} 
-                            className="w-full" 
-                            to={`/standings/${season}/division`}
+                            <Link
+                                onClick={() => { group = "division" }}
+                                className="w-full"
+                                to={`/standings/${season}/division`}
                             >
                                 Division
                             </Link>
                         </div>
                         <div className="hover:bg-gray-200 content-center text-center">
-                            <Link onClick={()=>{group="division"}} className="w-[100%]" to={`/standings/${season}/conference`}>Conference</Link>
+                            <Link onClick={() => { group = "conference" }} className="w-[100%]" to={`/standings/${season}/conference`}>Conference</Link>
                         </div>
                         <div className="hover:bg-gray-200 content-center text-center">
-                            <Link onClick={()=>{group="division"}} className="w-[100%]" to={`/standings/${season}/league`}>League</Link>
+                            <Link onClick={() => { group = "league" }} className="w-[100%]" to={`/standings/${season}/league`}>League</Link>
                         </div>
                     </DropdownMenu>
                 </div>
@@ -87,7 +87,7 @@ export default function StandingsPage({ season, group }) {
                 </>)
             })}
             <StandingsLegend />
-        </>
+        </MainPageSection>
     )
 }
 
@@ -95,7 +95,7 @@ function DropdownMenu({ startValue, children }) {
     const dropdownContent = useRef(null)
 
     const toggleDropdown = () => {
-        if(dropdownContent.current.style.display == 'block'){
+        if (dropdownContent.current.style.display == 'block') {
             dropdownContent.current.style.display = 'none'
         } else {
             dropdownContent.current.style.display = 'block'
@@ -117,9 +117,10 @@ function DropdownMenu({ startValue, children }) {
 }
 
 function StandingsTableHeader() {
-    const divListClass = "border-b-1 border-t-1 font-bold pt-2 pb-2";
+    const divListClass = "border-b-1 border-t-1 font-bold pt-2 pb-2 text-center"
+    const gridContainerClass = "grid grid-cols-[2fr_8fr_repeat(3,2fr)_2.5fr_repeat(8,3fr)_repeat(2,2.5fr)]"
     return (
-        <div className="grid grid-cols-[2fr_8fr_repeat(6,2fr)_repeat(6,3fr)_repeat(2,2fr)]">
+        <div className={gridContainerClass}>
             <div className={divListClass}>Rank</div>
             <div className={divListClass}>Team Name</div>
             <div className={divListClass}>W</div>
@@ -133,7 +134,7 @@ function StandingsTableHeader() {
             <div className={divListClass}>Away</div>
             <div className={divListClass}>Div</div>
             <div className={divListClass}>Conf</div>
-            <div className={divListClass}>Nonconf</div>
+            <div className={divListClass}>Non-Conf</div>
             <div className={divListClass}>Strk</div>
             <div className={divListClass}>Last5</div>
         </div>
@@ -141,24 +142,27 @@ function StandingsTableHeader() {
 }
 
 function StandingsTableRow({ team, rank }) {
-    const divListClass = "border-b-1 border-t-1 font-bold pt-2 pb-2";
-    const netPointsClass = divListClass.concat(team.net >= 0 ? ' text-green-500': ' text-red-500')
+    const divListClass = "border-b-1 border-t-1 font-bold pt-2 pb-2 text-center"
+    const divListRBClass = divListClass.concat(" border-r-1")
+    const netPointsClass = team.net >= 0 ? ' text-green-500' : ' text-red-500'
+    const gridContainerClass = "hover:bg-gray-200 grid grid-cols-[2fr_8fr_repeat(3,2fr)_2.5fr_repeat(8,3fr)_repeat(2,2.5fr)]"
+    const winPercentage = (team) => ((team.w + team.t / 2) / (team.w + team.l + team.t)).toFixed(3) * 1000
     return (
-        <div className="hover:bg-gray-200 grid grid-cols-[2fr_8fr_repeat(6,2fr)_repeat(6,3fr)_repeat(2,2fr)]">
+        <div className={gridContainerClass}>
             <div className={divListClass}>{rank}</div>
-            <div className={divListClass}>{team.team_name}</div>
+            <div className={divListRBClass}>{team.team_name}</div>
             <div className={divListClass}>{team.w}</div>
             <div className={divListClass}>{team.l}</div>
             <div className={divListClass}>{team.t}</div>
-            <div className={divListClass}>{(team.w / (team.w + team.l)).toFixed(3)}</div>
+            <div className={divListRBClass}>{winPercentage(team)}</div>
             <div className={divListClass}>{team.ps}</div>
             <div className={divListClass}>{team.pa}</div>
-            <div className={divListClass}>{team.net}</div>
-            <div className={divListClass}>{team.home[0] + "-" + team.home[1]}</div>
-            <div className={divListClass}>{team.away[0] + "-" + team.away[1]}</div>
-            <div className={divListClass}>{team.div[0] + "-" + team.div[1]}</div>
-            <div className={divListClass}>{team.conf[0] + "-" + team.conf[1]}</div>
-            <div className={divListClass}>{team.nonconf[0] + "-" + team.nonconf[1]}</div>
+            <div className={divListRBClass}><p className={netPointsClass}>{team.net}</p></div>
+            <div className={divListClass}>{`${team.home[0]}-${team.home[1]}-${team.home[2]}`}</div>
+            <div className={divListRBClass}>{`${team.away[0]}-${team.away[1]}-${team.away[2]}`}</div>
+            <div className={divListClass}>{`${team.div[0]}-${team.div[1]}-${team.div[2]}`}</div>
+            <div className={divListClass}>{`${team.conf[0]}-${team.conf[1]}-${team.conf[2]}`}</div>
+            <div className={divListRBClass}>{`${team.nonconf[0]}-${team.nonconf[1]}-${team.nonconf[2]}`}</div>
             <div className={divListClass}>{team.strk}</div>
             <div className={divListClass}>{team.l5}</div>
         </div>
@@ -181,7 +185,7 @@ function StandingsLegend() {
                 <p className="text-sm">Away - Away Record</p>
                 <p className="text-sm">Div - Division Record</p>
                 <p className="text-sm">Conf - Conference Record</p>
-                <p className="text-sm">Nonconf - Non-Conference Record</p>
+                <p className="text-sm">Non-Conf - Non-Conference Record</p>
                 <p className="text-sm">Strk - Current Streak</p>
                 <p className="text-sm">L5 - Record in Last 5 Games</p>
             </div>

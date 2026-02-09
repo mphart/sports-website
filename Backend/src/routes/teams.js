@@ -9,7 +9,6 @@ router.get('/', async (req, res) => {
 
       const currYear = new Date().getFullYear();
       const [teams] = await db.query(`SELECT * FROM teams WHERE season=?`, [currYear]);
-      console.log(teams);
 
       res.status(200).send(teams);
     } catch (error) {

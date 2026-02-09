@@ -5,12 +5,11 @@ createTables();
 //     addTeams(i);
 // }
 // for(let i = 2000; i <= 2026; i++){
-//     const schedule = createSchedule(i, 13);
-    //    const executePendingMatches = await executePendingMatches();
+//     createSchedule(i, 13);
 // }
-// for (let i = 2000; i <= 2026; i++) {
-//     executePendingMatches();
-// }
+for (let i = 2000; i <= 2026; i++) {
+    executePendingMatches();
+}
 
 function createTables() {
     db.query(`
@@ -164,7 +163,13 @@ async function executePendingMatches() {
     matches.forEach((match) => {
         match.home_points = randomInt(200);
         match.away_points = randomInt(190);
-        match.match_status = match.home_points > match.away_points ? "HOME_WIN" : "HOME_LOSS";
+        if(match.home_points > match.away_points){
+            match.match_status = "HOME_WIN";
+        } else if(match.home_points < match.away_points){
+            match.match_status = "HOME_LOSS";
+        } else {
+            match.match_status = "HOME_TIE";
+        }
         db.query("UPDATE matches SET match_status=?,home_points=?,away_points=? WHERE match_id=?",
             [match.match_status, match.home_points, match.away_points, match.match_id]);
     })

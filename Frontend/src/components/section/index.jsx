@@ -1,7 +1,10 @@
 
 
 export function PageHeader({children}){
-    return(<h1 className="text-3xl font-bold pt-7 pb-7">{children}</h1>)
+    return(<>
+    <h1 className="text-3xl font-bold pt-7 pb-2">{children}</h1>
+    <hr className="mb-5"/>
+    </>)
 }
 
 export function MainPageSection({children}){

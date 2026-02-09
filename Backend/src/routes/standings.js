@@ -14,7 +14,10 @@ router.get("/", async (req, res) => {
         const [teams] = await db.query("SELECT team_name,conference,division FROM teams WHERE season=?", [season]);
         const teamStandings = {}
         teams.forEach(team => {
-            teamStandings[team.team_name] = { ...team, w: 0, l: 0, t: 0, pct: 0, ps: 0, pa: 0, net: 0, home: [0, 0], away: [0, 0], div: [0, 0], conf: [0, 0], nonconf: [0, 0], strk: "WO", l5: "" }
+            teamStandings[team.team_name] = { 
+                ...team, w: 0, l: 0, t: 0, pct: 0, ps: 0, pa: 0, net: 0, home: [0, 0, 0], away: [0, 0, 0], 
+                div: [0, 0, 0], conf: [0, 0, 0], nonconf: [0, 0, 0], strk: "WO", l5: "" 
+            }
         });
 
         // determine the win-loss record and other statistics of each team for the given season
@@ -72,6 +75,20 @@ router.get("/", async (req, res) => {
                 } else {
                     teamStandings[home].nonconf[1]++;
                     teamStandings[away].nonconf[0]++;
+                }
+            } else if (match.match_status == 'HOME_TIE') {
+                teamStandings[home].t++;
+                teamStandings[away].t++;
+                if (teamStandings[home].division == teamStandings[away].division) {
+                    teamStandings[home].div[2]++;
+                    teamStandings[away].div[2]++;
+                }
+                if (teamStandings[home].conference == teamStandings[away].conference) {
+                    teamStandings[home].conf[2]++;
+                    teamStandings[away].conf[2]++;
+                } else {
+                    teamStandings[home].nonconf[2]++;
+                    teamStandings[away].nonconf[2]++;
                 }
             }
         });
@@ -148,6 +165,7 @@ router.get("/", async (req, res) => {
             })
         }
 
+        // send the final result
         res.status(200).send(finalStandings);
 
     } catch (error) {

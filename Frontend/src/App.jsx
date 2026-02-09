@@ -25,7 +25,6 @@ function App() {
   return (
     <Router>
     <Header />
-      <MainPageSection>
         <Routes>
           <Route path="/" element={<HomePage />} />
 
@@ -41,7 +40,6 @@ function App() {
 
           <Route path="*" element={<p>404: Not Found</p>} />
         </Routes>
-      </MainPageSection>
     <Footer />
     </Router>
   )
