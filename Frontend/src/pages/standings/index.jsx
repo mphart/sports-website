@@ -16,7 +16,7 @@ export default function StandingsPage({ season, group }) {
     for(let i = currYear; i >= startYear; i--){
         standingsLinks.push(
             <div className="hover:bg-gray-200 content-center text-center">
-                <Link onClick={()=>{season=i}} className="w-[100%]" to={`/standings/${i}/${group}`}>{i}</Link>
+                <Link onClick={()=>{season=i}} className="w-[100%] pt-1 pb-1" to={`/standings/${i}/${group}`}>{i}</Link>
             </div>
         )
     }
@@ -74,12 +74,12 @@ export default function StandingsPage({ season, group }) {
             {standings && standings.group.map((g) => {
                 return (<>
                     <h1 key={g.name} className="text-2xl pb-3">{g.name}</h1>
-                    {g.subGroup.map((sgrp, i) => {
+                    {g.subGroup.map((sgrp) => {
                         return (
                             <>
-                                <h1 key={sgrp.name} className="text-xl">{sgrp.name}</h1>
+                                <h1 className="text-xl">{sgrp.name}</h1>
                                 <StandingsTableHeader />
-                                {sgrp.teams.map((team) => { return <StandingsTableRow team={team} rank={++i} /> })}
+                                {sgrp.teams.map((team, i) => { return <StandingsTableRow team={team} rank={++i} /> })}
                                 <br />
                             </>
                         )
@@ -103,10 +103,9 @@ function DropdownMenu({ startValue, children }) {
     }
 
     return (
-        <div>
+        <div onFocus={toggleDropdown} onBlur={toggleDropdown} className="pb-5">
             <button
                 className="border-2 bg-gray-200 pl-3 pr-3 pt-2 pb-2 min-w-[200px] cursor-pointer relative focus:bg-gray-300"
-                onClick={toggleDropdown}
             >
                 {startValue}
             </button>
@@ -116,26 +115,6 @@ function DropdownMenu({ startValue, children }) {
         </div>
     )
 }
-
-/**
- * 
-.dropdown {
-  position: relative;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 130px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 12px 16px;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
- */
 
 function StandingsTableHeader() {
     const divListClass = "border-b-1 border-t-1 font-bold pt-2 pb-2";

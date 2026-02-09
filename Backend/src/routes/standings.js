@@ -24,7 +24,9 @@ router.get("/", async (req, res) => {
                 home_teams.season,
                     matches.match_status,
                     home_teams.team_name AS home_team, 
-                    away_teams.team_name AS away_team
+                    away_teams.team_name AS away_team,
+                    home_points,
+                    away_points
                 FROM matches
                     INNER JOIN teams AS home_teams ON matches.home_id = home_teams.team_id
                     INNER JOIN teams AS away_teams ON matches.away_id = away_teams.team_id
@@ -126,10 +128,10 @@ router.get("/", async (req, res) => {
                 if(teamStandings[team].division == "White"){
                     finalStandings.group[0].subGroup[1].teams.push(teamStandings[team]);
                 }
-                if(teamStandings[team].division == "Red"){
+                if(teamStandings[team].division == "Blue"){
                     finalStandings.group[1].subGroup[0].teams.push(teamStandings[team]);
                 }
-                if(teamStandings[team].division == "White"){
+                if(teamStandings[team].division == "Green"){
                     finalStandings.group[1].subGroup[1].teams.push(teamStandings[team]);
                 }
             })
