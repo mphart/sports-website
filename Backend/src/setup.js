@@ -5,11 +5,12 @@ createTables();
 //     addTeams(i);
 // }
 // for(let i = 2000; i <= 2026; i++){
-//     createSchedule(i, 13);
+//     const schedule = createSchedule(i, 13);
+    //    const executePendingMatches = await executePendingMatches();
 // }
-for (let i = 2000; i <= 2026; i++) {
-    executePendingMatches();
-}
+// for (let i = 2000; i <= 2026; i++) {
+//     executePendingMatches();
+// }
 
 function createTables() {
     db.query(`
@@ -74,40 +75,55 @@ async function addTeams(season) {
     const [teams] = await db.query("SELECT team_id,conference,division FROM teams WHERE season=?", [season]);
     console.log(teams);
     if (!teams.length) {
-        db.query("INSERT INTO teams(team_name,conference,division,season) VALUES (?,?,?,?)", ["Reavers", "North", "Red", `${season}`]);
-        db.query("INSERT INTO teams(team_name,conference,division,season) VALUES (?,?,?,?)", ["Strikers", "North", "Red", `${season}`]);
-        db.query("INSERT INTO teams(team_name,conference,division,season) VALUES (?,?,?,?)", ["Bruisers", "North", "Red", `${season}`]);
-        db.query("INSERT INTO teams(team_name,conference,division,season) VALUES (?,?,?,?)", ["Raptors", "North", "Red", `${season}`]);
-        db.query("INSERT INTO teams(team_name,conference,division,season) VALUES (?,?,?,?)", ["Bulldozers", "North", "Red", `${season}`]);
-        db.query("INSERT INTO teams(team_name,conference,division,season) VALUES (?,?,?,?)", ["United", "North", "White", `${season}`]);
-        db.query("INSERT INTO teams(team_name,conference,division,season) VALUES (?,?,?,?)", ["Racers", "North", "White", `${season}`]);
-        db.query("INSERT INTO teams(team_name,conference,division,season) VALUES (?,?,?,?)", ["Prowlers", "North", "White", `${season}`]);
-        db.query("INSERT INTO teams(team_name,conference,division,season) VALUES (?,?,?,?)", ["Jackrabbits", "North", "White", `${season}`]);
-        db.query("INSERT INTO teams(team_name,conference,division,season) VALUES (?,?,?,?)", ["Grapefruits", "North", "White", `${season}`]);
-        db.query("INSERT INTO teams(team_name,conference,division,season) VALUES (?,?,?,?)", ["Flippers", "South", "Blue", `${season}`]);
-        db.query("INSERT INTO teams(team_name,conference,division,season) VALUES (?,?,?,?)", ["Dashers", "South", "Blue", `${season}`]);
-        db.query("INSERT INTO teams(team_name,conference,division,season) VALUES (?,?,?,?)", ["Apexes", "South", "Blue", `${season}`]);
-        db.query("INSERT INTO teams(team_name,conference,division,season) VALUES (?,?,?,?)", ["Slickbacks", "South", "Blue", `${season}`]);
-        db.query("INSERT INTO teams(team_name,conference,division,season) VALUES (?,?,?,?)", ["Crawlers", "South", "Blue", `${season}`]);
-        db.query("INSERT INTO teams(team_name,conference,division,season) VALUES (?,?,?,?)", ["Bagels", "South", "Green", `${season}`]);
-        db.query("INSERT INTO teams(team_name,conference,division,season) VALUES (?,?,?,?)", ["Jumpers", "South", "Green", `${season}`]);
-        db.query("INSERT INTO teams(team_name,conference,division,season) VALUES (?,?,?,?)", ["Chaplains", "South", "Green", `${season}`]);
-        db.query("INSERT INTO teams(team_name,conference,division,season) VALUES (?,?,?,?)", ["Fire", "South", "Green", `${season}`]);
-        db.query("INSERT INTO teams(team_name,conference,division,season) VALUES (?,?,?,?)", ["Sweepers", "South", "Green", `${season}`]);
+        db.query("INSERT INTO teams(team_name,stadium_id,conference,division,season) VALUES (?,?,?,?,?)", ["Reavers",1, "North", "Red", `${season}`]);
+        db.query("INSERT INTO teams(team_name,stadium_id,conference,division,season) VALUES (?,?,?,?,?)", ["Strikers",2, "North", "Red", `${season}`]);
+        db.query("INSERT INTO teams(team_name,stadium_id,conference,division,season) VALUES (?,?,?,?,?)", ["Bruisers",3, "North", "Red", `${season}`]);
+        db.query("INSERT INTO teams(team_name,stadium_id,conference,division,season) VALUES (?,?,?,?,?)", ["Raptors",4, "North", "Red", `${season}`]);
+        db.query("INSERT INTO teams(team_name,stadium_id,conference,division,season) VALUES (?,?,?,?,?)", ["Bulldozers",5, "North", "Red", `${season}`]);
+        db.query("INSERT INTO teams(team_name,stadium_id,conference,division,season) VALUES (?,?,?,?,?)", ["United",6, "North", "White", `${season}`]);
+        db.query("INSERT INTO teams(team_name,stadium_id,conference,division,season) VALUES (?,?,?,?,?)", ["Racers",7, "North", "White", `${season}`]);
+        db.query("INSERT INTO teams(team_name,stadium_id,conference,division,season) VALUES (?,?,?,?,?)", ["Prowlers",8, "North", "White", `${season}`]);
+        db.query("INSERT INTO teams(team_name,stadium_id,conference,division,season) VALUES (?,?,?,?,?)", ["Jackrabbits",9, "North", "White", `${season}`]);
+        db.query("INSERT INTO teams(team_name,stadium_id,conference,division,season) VALUES (?,?,?,?,?)", ["Grapefruits",10, "North", "White", `${season}`]);
+        db.query("INSERT INTO teams(team_name,stadium_id,conference,division,season) VALUES (?,?,?,?,?)", ["Flippers",11, "South", "Blue", `${season}`]);
+        db.query("INSERT INTO teams(team_name,stadium_id,conference,division,season) VALUES (?,?,?,?,?)", ["Dashers",12, "South", "Blue", `${season}`]);
+        db.query("INSERT INTO teams(team_name,stadium_id,conference,division,season) VALUES (?,?,?,?,?)", ["Apexes",13, "South", "Blue", `${season}`]);
+        db.query("INSERT INTO teams(team_name,stadium_id,conference,division,season) VALUES (?,?,?,?,?)", ["Slickbacks",14, "South", "Blue", `${season}`]);
+        db.query("INSERT INTO teams(team_name,stadium_id,conference,division,season) VALUES (?,?,?,?,?)", ["Crawlers",15, "South", "Blue", `${season}`]);
+        db.query("INSERT INTO teams(team_name,stadium_id,conference,division,season) VALUES (?,?,?,?,?)", ["Bagels",16, "South", "Green", `${season}`]);
+        db.query("INSERT INTO teams(team_name,stadium_id,conference,division,season) VALUES (?,?,?,?,?)", ["Jumpers",17, "South", "Green", `${season}`]);
+        db.query("INSERT INTO teams(team_name,stadium_id,conference,division,season) VALUES (?,?,?,?,?)", ["Chaplains",18, "South", "Green", `${season}`]);
+        db.query("INSERT INTO teams(team_name,stadium_id,conference,division,season) VALUES (?,?,?,?,?)", ["Fire",19, "South", "Green", `${season}`]);
+        db.query("INSERT INTO teams(team_name,stadium_id,conference,division,season) VALUES (?,?,?,?,?)", ["Sweepers",20, "South", "Green", `${season}`]);
     }
+}
+
+async function addStadiums(){
+    db.query("INSERT INTO stadiums(stadium_name) VALUES (?)", ["West End Stadium"]);
+    db.query("INSERT INTO stadiums(stadium_name) VALUES (?)", ["Carbonite Arena"]);
+    db.query("INSERT INTO stadiums(stadium_name) VALUES (?)", ["Berkshire Grandstand"]);
+    db.query("INSERT INTO stadiums(stadium_name) VALUES (?)", ["Watchers Stadium"]);
+    db.query("INSERT INTO stadiums(stadium_name) VALUES (?)", ["Smallpox Point"]);
+    db.query("INSERT INTO stadiums(stadium_name) VALUES (?)", ["Hokey Pokey Stadium"]);
+    db.query("INSERT INTO stadiums(stadium_name) VALUES (?)", ["Pullexus Grandstand"]);
+    db.query("INSERT INTO stadiums(stadium_name) VALUES (?)", ["Woldover Arena"]);
+    db.query("INSERT INTO stadiums(stadium_name) VALUES (?)", ["Deep Freeze Stadium"]);
+    db.query("INSERT INTO stadiums(stadium_name) VALUES (?)", ["Snatch Way Stadium"]);
+    db.query("INSERT INTO stadiums(stadium_name) VALUES (?)", ["Wheeler Way Stadium"]);
+    db.query("INSERT INTO stadiums(stadium_name) VALUES (?)", ["Knucklefist Arena"]);
+    db.query("INSERT INTO stadiums(stadium_name) VALUES (?)", ["Greenwraith Arena"]);
+    db.query("INSERT INTO stadiums(stadium_name) VALUES (?)", ["Chainmaster Point"]);
+    db.query("INSERT INTO stadiums(stadium_name) VALUES (?)", ["Rattlesnake Stadium"]);
+    db.query("INSERT INTO stadiums(stadium_name) VALUES (?)", ["Deepsea Stadium"]);
+    db.query("INSERT INTO stadiums(stadium_name) VALUES (?)", ["East Atlantis Arena"]);
+    db.query("INSERT INTO stadiums(stadium_name) VALUES (?)", ["West Atlantis Arena"]);
+    db.query("INSERT INTO stadiums(stadium_name) VALUES (?)", ["Huntington's Stadiums"]);
+    db.query("INSERT INTO stadiums(stadium_name) VALUES (?)", ["Steampunk Arena"]);
 }
 
 async function createSchedule(season, numMatches) {
     const [teams] = await db.query("SELECT team_id,conference,division FROM teams WHERE season=?", [season]);
-
     const schedule = [];
-
-    // const divisions = [];
-    // teams.forEach((team) =>{
-    //     if(!divisions.includes(team.division)){
-    //         divisions.push(team.division);
-    //     }
-    // })
 
     // for now, just do a round robin
     shuffleArray(teams);

@@ -92,13 +92,13 @@ export default function StandingsPage({ season, group }) {
 }
 
 function DropdownMenu({ startValue, children }) {
-    const dropdownContent = useRef(null);
+    const dropdownContent = useRef(null)
 
     const toggleDropdown = () => {
         if(dropdownContent.current.style.display == 'block'){
-            dropdownContent.current.style.display = 'none';
+            dropdownContent.current.style.display = 'none'
         } else {
-            dropdownContent.current.style.display = 'block';
+            dropdownContent.current.style.display = 'block'
         }
     }
 
@@ -142,13 +142,14 @@ function StandingsTableHeader() {
 
 function StandingsTableRow({ team, rank }) {
     const divListClass = "border-b-1 border-t-1 font-bold pt-2 pb-2";
+    const netPointsClass = divListClass.concat(team.net >= 0 ? ' text-green-500': ' text-red-500')
     return (
         <div className="hover:bg-gray-200 grid grid-cols-[2fr_8fr_repeat(6,2fr)_repeat(6,3fr)_repeat(2,2fr)]">
             <div className={divListClass}>{rank}</div>
             <div className={divListClass}>{team.team_name}</div>
             <div className={divListClass}>{team.w}</div>
             <div className={divListClass}>{team.l}</div>
-            <div className={divListClass}>0</div>
+            <div className={divListClass}>{team.t}</div>
             <div className={divListClass}>{(team.w / (team.w + team.l)).toFixed(3)}</div>
             <div className={divListClass}>{team.ps}</div>
             <div className={divListClass}>{team.pa}</div>

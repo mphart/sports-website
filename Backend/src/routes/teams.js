@@ -3,21 +3,18 @@ const router = express.Router();
 
 const db = require('../db');
 
-const ensure_exists = async () => {
-  await db.query(`
-    CREATE TABLE IF NOT EXISTS teams (
-      id             INT           AUTO_INCREMENT PRIMARY KEY,
-      team_name      VARCHAR(40)   NOT NULL UNIQUE,
-      team_color     VARCHAR(6)    NOT NULL UNIQUE,
-      conference     VARCHAR(40)   NOT NULL,
-      joindate       DATE          DEFAULT (CURRENT_DATE)
-    )
-  `);
-};
-ensure_exists();
+router.get('/', async (req, res) => {
+    try {
+      console.log(`[API] Requesting teams from current season`);
 
-router.get('/', (req, res) => {
-    // do nothing
+      const currYear = new Date().getFullYear();
+      const [teams] = await db.query(`SELECT * FROM teams WHERE season=?`, [currYear]);
+      console.log(teams);
+
+      res.status(200).send(teams);
+    } catch (error) {
+      res.status(500).send("Internal Server Error");
+    }
 })
 
 module.exports = router;

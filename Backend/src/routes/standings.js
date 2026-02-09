@@ -35,6 +35,12 @@ router.get("/", async (req, res) => {
         seasonMatches.forEach((match) => {
             let home = match.home_team;
             let away = match.away_team;
+            teamStandings[home].ps += match.home_points;
+            teamStandings[home].pa += match.away_points;
+            teamStandings[home].net += match.home_points - match.away_points;
+            teamStandings[away].ps += match.away_points;
+            teamStandings[away].pa += match.home_points;
+            teamStandings[away].net += match.away_points - match.home_points;
             if (match.match_status == 'HOME_WIN') {
                 teamStandings[home].w++;
                 teamStandings[away].l++;
