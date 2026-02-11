@@ -45,14 +45,12 @@ export default function StandingsPage({ season, group }) {
             <PageHeader>Standings</PageHeader>
             <div className="flex gap-2">
                 <div>
-                    <p>Season</p>
-                    <DropdownMenu startValue={season}>
+                    <DropdownMenu startValue={season} label="Season">
                         {standingsLinks.map((link) => link)}
                     </DropdownMenu>
                 </div>
                 <div>
-                    <p>Group By</p>
-                    <DropdownMenu startValue={group}>
+                    <DropdownMenu startValue={group} label="Group By">
                         <div className="hover:bg-gray-200 content-center text-center">
                             <Link
                                 onClick={() => { group = "division" }}
@@ -63,10 +61,10 @@ export default function StandingsPage({ season, group }) {
                             </Link>
                         </div>
                         <div className="hover:bg-gray-200 content-center text-center">
-                            <Link onClick={() => { group = "conference" }} className="w-[100%]" to={`/standings/${season}/conference`}>Conference</Link>
+                            <Link onClick={() => { group = "conference" }} className="w-full" to={`/standings/${season}/conference`}>Conference</Link>
                         </div>
                         <div className="hover:bg-gray-200 content-center text-center">
-                            <Link onClick={() => { group = "league" }} className="w-[100%]" to={`/standings/${season}/league`}>League</Link>
+                            <Link onClick={() => { group = "league" }} className="w-full" to={`/standings/${season}/league`}>League</Link>
                         </div>
                     </DropdownMenu>
                 </div>
@@ -91,7 +89,7 @@ export default function StandingsPage({ season, group }) {
     )
 }
 
-function DropdownMenu({ startValue, children }) {
+function DropdownMenu({ startValue, children, label }) {
     const dropdownContent = useRef(null)
 
     const toggleDropdown = () => {
@@ -103,16 +101,28 @@ function DropdownMenu({ startValue, children }) {
     }
 
     return (
-        <div onFocus={toggleDropdown} onBlur={toggleDropdown} className="pb-5">
-            <button
-                className="border-2 bg-gray-200 pl-3 pr-3 pt-2 pb-2 min-w-[200px] cursor-pointer relative focus:bg-gray-300"
-            >
-                {startValue}
-            </button>
-            <div className="min-w-[200px] max-h-[400px] absolute hidden bg-gray-100 overflow-auto" ref={dropdownContent}>
-                {children}
+        <>
+            <p>{label}</p>
+            <div className="pb-5">
+                <button
+                    onClick={toggleDropdown}
+                    className="border-2 bg-gray-200 pl-3 pr-3 pt-2 pb-2 min-w-[200px] cursor-pointer relative focus:bg-gray-300"
+                >
+                    {startValue}
+                </button>
+                <button className="min-w-[200px] max-h-[400px] absolute hidden bg-gray-100 overflow-auto"
+                    ref={dropdownContent} onClick={toggleDropdown}
+                >
+                    {children}
+                </button>
             </div>
-        </div>
+        </>
+    )
+}
+
+function DropdownMenuLink({ children, }) {
+    return (
+        <></>
     )
 }
 
