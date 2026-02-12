@@ -165,6 +165,8 @@ router.get("/", async (req, res) => {
             })
         }
 
+        console.log(finalStandings);
+
         // send the final result
         res.status(200).send(finalStandings);
 

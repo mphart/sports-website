@@ -8,7 +8,10 @@ router.get('/', async (req, res) => {
       console.log(`[API] Requesting teams from current season`);
 
       const currYear = new Date().getFullYear();
-      const [teams] = await db.query(`SELECT * FROM teams WHERE season=?`, [currYear]);
+      const [teams] = await db.query(`
+        SELECT * FROM teams LEFT JOIN stadiums ON teams.stadium_id = stadiums.stadium_id WHERE season=?`, 
+        [currYear]
+      );
 
       res.status(200).send(teams);
     } catch (error) {

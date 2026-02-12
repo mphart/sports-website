@@ -15,6 +15,7 @@ export default function TeamsPage() {
         try {
             const response = await fetch(apiPath)
             const result = await response.json()
+            console.log(result)
             setTeams(result)
         } catch (error) {
             console.error(error)
