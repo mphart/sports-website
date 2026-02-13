@@ -41,7 +41,7 @@ function TeamList({ teamList, listTitle }) {
                 return (
                     <div className="min-w-[420px] bg-blue-500 text-center mb-3">
                         {t.team_name}
-                        <p>{t.stadium_id}</p>
+                        <p>{t.stadium_name}</p>
                     </div>
                 )
             })}

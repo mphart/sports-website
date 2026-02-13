@@ -15,12 +15,14 @@ import Footer from './components/footer'
 import { MainPageSection } from './components/section'
 
 function App() {
-  const [user, setUser] = useState({})
+  const [user, setUser] = useState({
+    
+  })
 
   const startYear = 2000
   const currYear = new Date().getFullYear()
 
-  const UserContext = createContext({})
+  const UserContext = createContext(user)
 
   const standingsPaths = []
   for (let i = startYear; i <= currYear + 1; i++) {
@@ -41,10 +43,10 @@ function App() {
           </Route>
           <Route path="/schedule" element={<SchedulePage />} />
           <Route path="/teams" element={<TeamsPage />} />
-          <Route path="/signup" element={<SignupPage setUser={setUser} />} />
+          <Route path="/signup" element={<SignupPage />} />
           <Route path="/watch" element={<WatchPage />} />
           <Route path="/news" element={<NewsPage />} />
-          <Route path="/login" element={<LoginPage />} />
+          <Route path="/login" element={<LoginPage setUser={setUser} />} />
           <Route path="*" element={<p>404: Not Found</p>} />
         </Routes>
         <Footer />
